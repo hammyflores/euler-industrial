@@ -18,9 +18,17 @@ HEADER
 
     z-index:1000;
 
-    padding:22px 0;
+    padding:18px 0;
 
-    transition:.35s ease;
+    background:rgba(5,5,5,.80);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    transition:all .35s ease;
 
 }
 
@@ -43,13 +51,25 @@ NAVBAR
 
 .navbar{
 
-    display:flex;
+    
 
-    align-items:center;
+    top:0;
 
-    justify-content:space-between;
+    left:0;
 
-    gap:40px;
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    transition:all .35s ease;
 
 }
 

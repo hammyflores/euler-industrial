@@ -1,0 +1,403 @@
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    padding-top:80px;   /* <-- nuevo */
+
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.96) 0%,
+            rgba(0,0,0,.90) 28%,
+            rgba(0,0,0,.68) 48%,
+            rgba(0,0,0,.25) 68%,
+            rgba(0,0,0,0) 100%
+        ),
+        url("../img/hero.webp");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: 72% center;
+
+}
+.hero-container{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+.hero-content{
+
+    width:620px;
+
+    margin-top:80px;
+
+    position:relative;
+
+    z-index:10;
+
+    opacity:0;
+
+    transform:translateY(40px) scale(.98);
+
+    animation:heroContent 1s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:.25s;
+
+}
+.hero-tag{
+
+    display:inline-block;
+
+    margin-bottom:14px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#16a34a;
+
+}
+.hero h1{
+    font-size:72px;
+    line-height:1.05;
+    font-weight:800;
+    margin-bottom:28px;
+}
+.hero h1 span{
+
+    color:#16a34a;
+
+}
+/* ==========================
+   Línea decorativa Hero
+========================== */
+
+.hero-line{
+
+    display:flex;
+    align-items:center;
+    margin:22px 0 38px;
+
+}
+
+.hero-line .line{
+
+    position:relative;
+    width:120px;
+    height:2px;
+    background:#16a34a;
+    overflow:hidden;
+
+}
+
+.hero-line .dot{
+
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    border:2px solid #16a34a;
+    background:#050505;
+    transition:.3s;
+
+}
+
+.hero-line .dot.active{
+
+    background:#16a34a;
+
+    box-shadow:
+        0 0 8px #16a34a,
+        0 0 18px rgba(22,163,74,.7);
+
+}
+
+.hero-line .pulse{
+
+    position:absolute;
+    left:-12px;
+    top:50%;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#6cff96;
+
+    transform:translateY(-50%);
+
+    box-shadow:
+        0 0 10px #6cff96,
+        0 0 22px #16a34a;
+
+    animation:pulseMove 3s linear infinite;
+
+}
+
+
+.hero p{
+
+    max-width:560px;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    color:#d8d8d8;
+
+}
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:40px;
+
+    margin-bottom:60px;
+
+}
+/* ===================================
+   HERO FEATURES
+=================================== */
+
+.hero-features{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    margin-top:10px;
+
+}
+
+.feature{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    position:relative;
+
+}
+
+.feature-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border:1px solid rgba(22,163,74,.45);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#16a34a;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+    transition:.35s;
+
+}
+
+.feature-content h3{
+
+    font-size:24px;
+
+    line-height:1.35;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.feature-content p{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#b9b9b9;
+
+}
+
+.divider{
+
+    width:1px;
+
+    background:rgba(255,255,255,.12);
+
+    margin:0 28px;
+
+    align-self:stretch;
+
+}
+
+
+/* ===================================
+   FEATURE HOVER
+=================================== */
+
+.feature{
+
+    transition:all .35s ease;
+
+    padding:14px;
+
+    border-radius:12px;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(22,163,74,.05);
+
+}
+
+.feature:hover .feature-icon{
+
+    background:#16a34a;
+
+    color:#fff;
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 18px rgba(22,163,74,.45);
+
+}
+
+.feature:hover h3{
+
+    color:#16a34a;
+
+}
+
+.feature:hover p{
+
+    color:#fff;
+
+}
+
+.btn-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:18px 34px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    border-radius:4px;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    background:#1cc15b;
+
+}
+
+.btn-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:18px 34px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:4px;
+
+}
+
+@keyframes pulseMove{
+
+    from{
+
+        left:-12px;
+
+    }
+
+    to{
+
+        left:120px;
+
+    }
+
+}
+@keyframes heroContent{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}

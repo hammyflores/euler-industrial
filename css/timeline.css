@@ -1,0 +1,77 @@
+/*==================================================
+TIMELINE
+==================================================*/
+
+.timeline{
+
+    position:fixed;
+
+    left:110px;
+
+    top:110px;
+
+    width:24px;
+
+    height:calc(100vh - 150px);
+
+    z-index:900;
+
+    pointer-events:none;
+
+}
+
+.timeline-line{
+
+    position:absolute;
+
+    left:11px;
+
+    top:0;
+
+    width:2px;
+
+    height:100%;
+
+    background:rgba(21,133,15,.20);
+
+}
+
+.timeline-progress{
+
+    position:absolute;
+
+    left:11px;
+
+    top:0;
+
+    width:2px;
+
+    height:0;
+
+    background:#16a34a;
+
+    transition:height .15s linear;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:2px;
+
+    top:0;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#16a34a;
+
+    box-shadow:
+        0 0 10px #16a34a,
+        0 0 22px rgba(22,163,74,.55);
+
+}

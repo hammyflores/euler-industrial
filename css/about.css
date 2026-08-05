@@ -1,0 +1,578 @@
+
+/*=========================================
+                NOSOTROS
+=========================================*/
+
+.about{
+
+    position:relative;
+
+     min-height:560px;
+
+    padding:120px 0;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(0,0,0,.92) 0%,
+
+            rgba(0,0,0,.82) 28%,
+
+            rgba(0,0,0,.52) 55%,
+
+            rgba(0,0,0,.15) 78%,
+
+            rgba(0,0,0,0) 100%
+
+        ),
+
+        url("../img/about.webp");
+
+      background-size:110%;
+
+    background-position:center 25%;
+
+    background-repeat:no-repeat;
+}
+
+.about-bg,
+.about-overlay{
+
+    display:none;
+
+}
+
+.about-container{
+
+    width:100%;
+
+    max-width:1280px;
+
+    margin:0 auto;
+
+    padding:0 30px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.about-content{
+
+    max-width:540px;
+
+    padding:70px 0 70px;
+
+}
+
+.about-tag{
+
+    display:inline-block;
+
+    color:#16a34a;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:22px;
+
+}
+
+.about-title{
+
+    color:#fff;
+
+    font-size:64px;
+
+    font-weight:800;
+
+    line-height:1.05;
+
+    margin-bottom:30px;
+
+}
+
+.about-title span{
+
+    color:#16a34a;
+
+}
+
+.about-text{
+
+    color:#d6d6d6;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    max-width:520px;
+
+}
+
+/*=========================================
+            BENEFICIOS
+=========================================*/
+
+.about-benefits{
+
+    background:#050505;
+
+    padding:110px 0 90px;
+
+}
+
+.about-benefits .container{
+
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:0 30px;
+
+}
+
+/*=========================================
+            TITULO
+=========================================*/
+
+.benefits-header{
+
+    text-align:center;
+
+    margin-bottom:65px;
+
+}
+
+.benefits-header .section-tag{
+
+    display:inline-block;
+
+    color:#16a34a;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:16px;
+
+}
+
+.benefits-header h2{
+
+    color:#fff;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    line-height:1.08;
+
+}
+
+.benefits-header h2 span{
+
+    color:#16a34a;
+
+}
+
+/*=========================================
+            GRID
+=========================================*/
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:18px;
+
+}
+
+/*=========================================
+            TARJETAS
+=========================================*/
+
+.benefit-card{
+
+    background:#0b0b0b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    padding:32px 24px;
+
+    min-height:280px;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(22,163,74,.35);
+
+    box-shadow:
+
+        0 14px 30px rgba(0,0,0,.28);
+
+}
+
+/*=========================================
+            TITULO
+=========================================*/
+
+.benefit-card h3{
+
+    color:#fff;
+
+    font-size:19px;
+
+    font-weight:700;
+
+    line-height:1.45;
+
+    margin-bottom:22px;
+
+}
+
+/*=========================================
+            LINEA
+=========================================*/
+
+.benefit-divider{
+
+    width:42px;
+
+    height:3px;
+
+    background:#16a34a;
+
+    border-radius:20px;
+
+    margin-bottom:24px;
+
+    transition:.35s;
+
+}
+
+.benefit-card:hover .benefit-divider{
+
+    width:60px;
+
+}
+
+/*=========================================
+            TEXTO
+=========================================*/
+
+.benefit-card p{
+
+    color:#bdbdbd;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    transition:.35s;
+
+}
+
+.benefit-card:hover p{
+
+    color:#ececec;
+
+}
+
+/*=========================================
+            EFECTO
+=========================================*/
+
+.benefit-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.benefit-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    top:0;
+
+    height:4px;
+
+    background:#16a34a;
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s;
+
+}
+
+.benefit-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/*=========================================
+        NUESTRO COMPROMISO
+=========================================*/
+
+.about-commitment{
+
+    background:#050505;
+
+    padding:50px 0 120px;
+
+}
+
+.about-commitment .container{
+
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:0 30px;
+
+}
+
+/*=========================================
+        CABECERA
+=========================================*/
+
+.commitment-top{
+
+    display:grid;
+
+    grid-template-columns:320px 1fr;
+
+    gap:70px;
+
+    align-items:start;
+
+    margin-bottom:70px;
+
+    padding-top:60px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.commitment-title .section-tag{
+
+    display:inline-block;
+
+    color:#16a34a;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:14px;
+
+}
+
+.commitment-title h2{
+
+    color:#fff;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    line-height:1.05;
+
+}
+
+.commitment-description p{
+
+    color:#cfcfcf;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+
+}
+
+.commitment-description p:last-child{
+
+    margin-bottom:0;
+
+}
+
+/*=========================================
+        TIMELINE
+=========================================*/
+
+.commitment-timeline{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:24px;
+
+    margin:50px 0 90px;
+
+}
+
+.timeline-line{
+
+    position:absolute;
+
+    top:8px;
+
+    left:10%;
+
+    right:10%;
+
+    height:2px;
+
+    background:#16a34a;
+
+    opacity:.45;
+
+    z-index:1;
+ display:none;
+}
+
+.timeline-item{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+..timeline-dot{
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#16a34a;
+
+    border:4px solid #050505;
+
+    box-shadow:0 0 10px rgba(22,163,74,.35);
+
+    margin:0 auto 24px;
+
+    flex-shrink:0;
+
+}
+.timeline-item:hover .timeline-dot{
+
+    transform:scale(1.15);
+
+}
+
+.timeline-item p{
+
+    color:#efefef;
+
+    font-size:18px;
+
+    line-height:1.45;
+
+    font-weight:500;
+
+    max-width:170px;
+
+    margin:0 auto;
+
+}
+
+/*=========================================
+        CIERRE
+=========================================*/
+
+.commitment-closing{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding-top:50px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+}
+
+.commitment-closing p{
+
+    color:#d8d8d8;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    font-weight:400;
+
+}
+
+.commitment-closing span{
+
+    color:#16a34a;
+
+    font-weight:700;
+
+}
