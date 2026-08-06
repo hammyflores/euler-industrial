@@ -1,18 +1,20 @@
 /*==================================================
-                    CONTACTO
+                    CONTACT
 ==================================================*/
 
 .contact{
 
     position:relative;
 
-    padding:120px 0 0;
+    overflow:hidden;
 
     background:#050505;
 
-    overflow:hidden;
+    padding-top:clamp(70px,8vw,120px);
 
 }
+
+
 
 /*==================================================
                 LAYOUT
@@ -24,18 +26,24 @@
 
     display:grid;
 
-    grid-template-columns:58% 42%;
+    grid-template-columns:
+
+        minmax(0,58%)
+
+        minmax(360px,42%);
 
     align-items:start;
 
     gap:0;
 
-    min-height:700px;
+    min-height:clamp(560px,70vw,700px);
 
 }
 
+
+
 /*==================================================
-            FONDO IZQUIERDO
+                CONTACT INFO
 ==================================================*/
 
 .contact-info{
@@ -44,14 +52,21 @@
 
     padding:
 
-        40px
-        90px
-        30px
+        clamp(24px,4vw,40px)
+
+        clamp(40px,7vw,90px)
+
+        clamp(20px,3vw,30px)
+
         0;
 
 }
 
-/* Imagen + degradado */
+
+
+/*==================================================
+                BACKGROUND
+==================================================*/
 
 .contact-info::before{
 
@@ -59,13 +74,11 @@
 
     position:absolute;
 
-    top:0;
+    inset:0;
 
-left:-120px;
+    left:clamp(-120px,-8vw,-60px);
 
-right:-120px;
-
-bottom:0;
+    right:clamp(-120px,-8vw,-60px);
 
     z-index:0;
 
@@ -95,13 +108,17 @@ bottom:0;
 
     background-repeat:no-repeat;
 
-    background-size:100%;
+    background-size:cover;
 
-background-position:92% center;
+    background-position:92% center;
 
 }
 
-/* Todo el contenido queda encima */
+
+
+/*==================================================
+                CONTENT
+==================================================*/
 
 .contact-info>*{
 
@@ -111,54 +128,53 @@ background-position:92% center;
 
 }
 
+
+
 /*==================================================
-                ETIQUETA
+                SECTION TAG
 ==================================================*/
 
 .contact-info .section-tag{
 
     display:inline-block;
 
+    margin-bottom:clamp(8px,1vw,10px);
+
     color:var(--green);
 
-    font-size:1rem;
+    font-size:clamp(.82rem,.9vw,1rem);
 
     font-weight:700;
 
-    letter-spacing:4px;
-
-    margin-bottom:10px;
+    letter-spacing:clamp(2px,.35vw,4px);
 
     text-transform:uppercase;
 
 }
 
 
+
 /*==================================================
-                TÍTULO
+                TITLE
 ==================================================*/
 
 .contact-info h2{
 
+    width:100%;
+
+    margin-top:clamp(6px,1vw,8px);
+
+    margin-bottom:clamp(12px,2vw,15px);
+
     color:#fff;
 
-    font-size:3rem;
-
-    line-height:1.00;
+    font-size:clamp(2rem,4vw,3rem);
 
     font-weight:700;
 
-    max-width:760px;
-
-    max-width:none;
-
-width:100%;
+    line-height:1;
 
     text-wrap:balance;
-
-    margin-top:8px;
-  
-    margin-bottom:15px;
 
 }
 
@@ -168,24 +184,49 @@ width:100%;
 
 }
 
+
+
 /*==================================================
-            DESCRIPCIÓN
+                DESCRIPTION
 ==================================================*/
 
 .contact-info>p{
 
+    width:min(470px,100%);
+
+    margin-bottom:clamp(24px,3vw,35px);
+
     color:#d2d2d2;
 
-    max-width:470px;
+    font-size:clamp(1rem,1.25vw,1.08rem);
 
-    line-height:1.2;
-
-    margin-bottom:35px;
+    line-height:1.7;
 
 }
 
+
+
 /*==================================================
-            DATOS
+                IMPROVEMENTS
+==================================================*/
+
+.contact img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+.contact-info>*{
+
+    text-wrap:balance;
+
+}
+
+
+/*==================================================
+                CONTACT ITEMS
 ==================================================*/
 
 .contact-items{
@@ -194,9 +235,15 @@ width:100%;
 
     flex-direction:column;
 
-    max-width:460px;
+    width:min(460px,100%);
 
 }
+
+
+
+/*==================================================
+                CONTACT ITEM
+==================================================*/
 
 .contact-item{
 
@@ -204,13 +251,25 @@ width:100%;
 
     align-items:flex-start;
 
-    gap:18px;
+    gap:clamp(14px,2vw,18px);
 
-    padding:18px 0;
+    padding:
+
+        clamp(16px,2vw,18px)
+
+        0;
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease;
+
 }
+
+
 
 .contact-item:last-child{
 
@@ -218,33 +277,67 @@ width:100%;
 
 }
 
+
+
 /*==================================================
-                ÍCONO
+                    ICON
 ==================================================*/
 
 .contact-icon{
 
-    width:56px;
+    display:flex;
 
-    height:56px;
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+    width:clamp(48px,5vw,56px);
+
+    height:clamp(48px,5vw,56px);
 
     border-radius:50%;
 
     border:1px solid rgba(21,133,15,.45);
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
     color:var(--green);
 
-    flex-shrink:0;
+    transition:
 
-    transition:.35s;
+        background .35s ease,
+
+        color .35s ease,
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
 
 }
+
+
+
+.contact-icon svg{
+
+    width:clamp(20px,2vw,24px);
+
+    height:clamp(20px,2vw,24px);
+
+}
+
+
+
+/*==================================================
+                HOVER
+==================================================*/
+
+.contact-item:hover{
+
+    transform:translateX(4px);
+
+}
+
+
 
 .contact-item:hover .contact-icon{
 
@@ -252,34 +345,118 @@ width:100%;
 
     color:#050505;
 
+    transform:scale(1.06);
+
+    box-shadow:
+
+        0 0 18px rgba(21,133,15,.28);
+
 }
 
+
+
 /*==================================================
-                TEXTO
+                CONTENT
+==================================================*/
+
+.contact-item-content{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+
+
+/*==================================================
+                TITLE
 ==================================================*/
 
 .contact-item h4{
 
+    margin:0 0 clamp(4px,.8vw,6px);
+
     color:#fff;
 
-    font-size:1rem;
+    font-size:clamp(.95rem,1vw,1rem);
 
-    margin-bottom:6px;
+    font-weight:600;
+
+    line-height:1.3;
 
 }
+
+
+
+/*==================================================
+                TEXT
+==================================================*/
 
 .contact-item span{
 
+    display:block;
+
     color:#cfcfcf;
+
+    font-size:clamp(.88rem,.95vw,.93rem);
 
     line-height:1.7;
 
-    font-size:.93rem;
+}
+
+
+
+/*==================================================
+                LINKS
+==================================================*/
+
+.contact-item a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:
+
+        color .30s ease;
 
 }
 
+
+
+.contact-item a:hover{
+
+    color:var(--green);
+
+}
+
+
+
 /*==================================================
-                TARJETA
+                IMPROVEMENTS
+==================================================*/
+
+.contact-item h4,
+.contact-item span{
+
+    text-wrap:balance;
+
+}
+
+
+
+.contact-item>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/*==================================================
+                CONTACT CARD
 ==================================================*/
 
 .contact-card{
@@ -288,26 +465,32 @@ width:100%;
 
     z-index:5;
 
-    margin-top:-10px;
+    margin-top:clamp(-10px,-1vw,0);
 
-    margin-left:-10px;
+    margin-left:clamp(-10px,-1vw,0);
 
-    background:#111111;
+    background:#111;
 
     border:1px solid rgba(255,255,255,.08);
 
-    border-radius:16px;
+    border-radius:clamp(14px,1vw,16px);
 
     overflow:hidden;
 
     box-shadow:
 
-        0 35px 90px rgba(0,0,0,.45);
+        0 clamp(24px,4vw,35px)
+
+        clamp(55px,8vw,90px)
+
+        rgba(0,0,0,.45);
 
 }
 
+
+
 /*==================================================
-            CABECERA
+                CARD HEADER
 ==================================================*/
 
 .card-header{
@@ -316,59 +499,82 @@ width:100%;
 
     align-items:center;
 
-    gap:14px;
+    gap:clamp(10px,1.5vw,14px);
 
     padding:
 
-        34px
-        34px
-        26px;
+        clamp(24px,3vw,34px)
+
+        clamp(22px,3vw,34px)
+
+        clamp(18px,2vw,26px);
 
 }
 
+
+
 .card-header svg{
+
+    width:clamp(24px,2vw,28px);
+
+    height:clamp(24px,2vw,28px);
 
     color:var(--green);
 
 }
 
+
+
 .card-header h3{
 
     color:#fff;
 
-    font-size:1.6rem;
+    font-size:clamp(1.35rem,2vw,1.6rem);
 
     font-weight:600;
 
+    line-height:1.25;
+
 }
 
+
+
 /*==================================================
-            FORMULARIO
+                FORM
 ==================================================*/
 
 .contact-form{
 
     padding:
 
-        10px
-    
-        34px
-        34px;
+        clamp(8px,1vw,10px)
+
+        clamp(22px,3vw,34px)
+
+        clamp(22px,3vw,34px);
 
 }
+
+
+
+/*==================================================
+                ROW
+==================================================*/
 
 .contact-row{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
-    gap:18px;
+    gap:clamp(14px,2vw,18px);
 
 }
 
+
+
 /*==================================================
-                    CAMPOS
+                FIELD
 ==================================================*/
 
 .field{
@@ -377,21 +583,29 @@ width:100%;
 
     flex-direction:column;
 
-    margin-bottom:18px;
+    margin-bottom:clamp(16px,2vw,18px);
 
 }
+
+
 
 .field label{
 
+    margin-bottom:clamp(8px,1vw,10px);
+
     color:#fff;
 
-    font-size:.82rem;
+    font-size:clamp(.80rem,.9vw,.82rem);
 
     font-weight:500;
 
-    margin-bottom:10px;
-
 }
+
+
+
+/*==================================================
+                INPUTS
+==================================================*/
 
 .field input,
 .field select,
@@ -399,7 +613,11 @@ width:100%;
 
     width:100%;
 
-    padding:15px 18px;
+    padding:
+
+        clamp(12px,1vw,15px)
+
+        clamp(15px,2vw,18px);
 
     border:1px solid rgba(255,255,255,.08);
 
@@ -409,21 +627,31 @@ width:100%;
 
     color:#fff;
 
-    font-size:.92rem;
-
     font-family:'Montserrat',sans-serif;
 
-    transition:.30s;
+    font-size:clamp(.90rem,1vw,.95rem);
+
+    transition:
+
+        border-color .30s ease,
+
+        box-shadow .30s ease,
+
+        background .30s ease;
 
 }
+
+
 
 .field textarea{
 
     resize:none;
 
-    min-height:145px;
+    min-height:clamp(120px,18vw,145px);
 
 }
+
+
 
 .field input::placeholder,
 .field textarea::placeholder{
@@ -431,6 +659,8 @@ width:100%;
     color:#777;
 
 }
+
+
 
 .field input:focus,
 .field textarea:focus,
@@ -440,9 +670,13 @@ width:100%;
 
     border-color:var(--green);
 
-    box-shadow:0 0 0 3px rgba(21,133,15,.12);
+    box-shadow:
+
+        0 0 0 3px rgba(21,133,15,.12);
 
 }
+
+
 
 .field select{
 
@@ -452,8 +686,10 @@ width:100%;
 
 }
 
+
+
 /*==================================================
-                    BOTÓN
+                BUTTON
 ==================================================*/
 
 .contact-form .btn-primary{
@@ -466,11 +702,11 @@ width:100%;
 
     align-items:center;
 
-    gap:14px;
+    gap:clamp(10px,1.5vw,14px);
 
-    margin-top:12px;
+    margin-top:clamp(8px,1.5vw,12px);
 
-    padding:18px;
+    padding:clamp(15px,2vw,18px);
 
     border:none;
 
@@ -478,19 +714,51 @@ width:100%;
 
 }
 
+
+
 /*==================================================
-                BENEFICIOS
+                IMPROVEMENTS
+==================================================*/
+
+.card-header h3,
+.field label{
+
+    text-wrap:balance;
+
+}
+
+.field input,
+.field select,
+.field textarea{
+
+    box-sizing:border-box;
+
+}
+
+
+
+
+/*==================================================
+                CONTACT FEATURES
 ==================================================*/
 
 .contact-features{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(min(220px,100%),1fr));
 
     border-top:1px solid rgba(255,255,255,.08);
 
 }
+
+
+
+/*==================================================
+                FEATURE
+==================================================*/
 
 .contact-features>div{
 
@@ -498,11 +766,27 @@ width:100%;
 
     align-items:center;
 
-    gap:14px;
+    gap:clamp(12px,1.8vw,14px);
 
-    padding:24px 22px;
+    padding:
+
+        clamp(18px,2.5vw,24px)
+
+        clamp(18px,2vw,22px);
+
+    transition:
+
+        background .35s ease,
+
+        transform .35s ease;
 
 }
+
+
+
+/*==================================================
+                DIVISOR
+==================================================*/
 
 .contact-features>div:not(:last-child){
 
@@ -510,40 +794,88 @@ width:100%;
 
 }
 
+
+
+/*==================================================
+                ICON
+==================================================*/
+
 .contact-features svg{
 
-    width:24px;
+    width:clamp(22px,2vw,24px);
 
-    height:24px;
+    height:clamp(22px,2vw,24px);
 
     color:var(--green);
 
     flex-shrink:0;
 
+    transition:
+
+        transform .35s ease,
+
+        color .35s ease;
+
 }
+
+
+
+/*==================================================
+                TEXT
+==================================================*/
 
 .contact-features span{
 
+    display:block;
+
     color:#d0d0d0;
 
-    font-size:.82rem;
+    font-size:clamp(.80rem,.9vw,.82rem);
 
-    line-height:1.35;
+    line-height:1.45;
 
 }
+
+
 
 .contact-features strong{
 
     display:block;
 
+    margin-bottom:4px;
+
     color:#fff;
+
+    font-size:clamp(.92rem,1vw,1rem);
 
     font-weight:600;
 
 }
 
+
+
 /*==================================================
-                LÍNEA VERDE
+                HOVER
+==================================================*/
+
+.contact-features>div:hover{
+
+    background:rgba(21,133,15,.04);
+
+}
+
+
+
+.contact-features>div:hover svg{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*==================================================
+                BOTTOM LINE
 ==================================================*/
 
 .contact-bottom-line{
@@ -556,6 +888,30 @@ width:100%;
 
 }
 
+
+
+/*==================================================
+                IMPROVEMENTS
+==================================================*/
+
+.contact-features>*{
+
+    position:relative;
+
+}
+
+
+
+.contact-features strong,
+.contact-features span{
+
+    text-wrap:balance;
+
+}
+
+
+
+
 /*==================================================
                     FOOTER
 ==================================================*/
@@ -564,9 +920,21 @@ width:100%;
 
     background:#050505;
 
-    padding:38px 0 45px;
+    padding:
+
+        clamp(32px,5vw,38px)
+
+        0
+
+        clamp(36px,6vw,45px);
 
 }
+
+
+
+/*==================================================
+                CONTAINER
+==================================================*/
 
 .footer .container{
 
@@ -578,6 +946,12 @@ width:100%;
 
 }
 
+
+
+/*==================================================
+                SOCIAL
+==================================================*/
+
 .footer-social{
 
     display:flex;
@@ -586,21 +960,21 @@ width:100%;
 
     align-items:center;
 
-    gap:20px;
+    flex-wrap:wrap;
 
-    margin-bottom:28px;
+    gap:clamp(16px,2vw,20px);
+
+    margin-bottom:clamp(22px,3vw,28px);
 
 }
 
 
 
+/*==================================================
+                SOCIAL LINK
+==================================================*/
+
 .footer-social a{
-
-    
-
-    width:52px;
-
-    height:52px;
 
     display:flex;
 
@@ -608,15 +982,25 @@ width:100%;
 
     align-items:center;
 
-    border:1px solid rgba(21,133,15,.35);
+    width:clamp(46px,5vw,52px);
+
+    height:clamp(46px,5vw,52px);
 
     border-radius:8px;
 
+    border:1px solid rgba(21,133,15,.35);
+
     color:var(--green);
 
-    font-size:22px;
+    transition:
 
-    transition:.35s;
+        background .35s ease,
+
+        color .35s ease,
+
+        transform .35s ease,
+
+        border-color .35s ease;
 
 }
 
@@ -636,11 +1020,17 @@ width:100%;
 
 .footer-social svg{
 
-    width:22px;
+    width:clamp(20px,2vw,22px);
 
-    height:22px;
+    height:clamp(20px,2vw,22px);
 
 }
+
+
+
+/*==================================================
+                COPYRIGHT
+==================================================*/
 
 .footer p{
 
@@ -648,31 +1038,19 @@ width:100%;
 
     text-align:center;
 
-    font-size:.82rem;
+    font-size:clamp(.80rem,.9vw,.82rem);
+
+    line-height:1.7;
 
 }
+
+
 
 /*==================================================
-                RESPONSIVE
+            RESPONSIVE
 ==================================================*/
 
-@media(max-width:1200px){
-
-    .contact-info{
-
-        padding-right:40px;
-
-    }
-
-    .contact-card{
-
-        margin-left:15px;
-
-    }
-
-}
-
-@media(max-width:992px){
+@media (max-width:992px){
 
     .contact{
 
@@ -684,7 +1062,7 @@ width:100%;
 
         grid-template-columns:1fr;
 
-        gap:60px;
+        gap:clamp(40px,6vw,60px);
 
     }
 
@@ -708,29 +1086,17 @@ width:100%;
 
 }
 
-@media(max-width:768px){
 
-    .contact-info h2{
 
-        font-size:2.7rem;
+/*==================================================
+            MOBILE
+==================================================*/
 
-    }
+@media (max-width:768px){
 
     .contact-row{
 
         grid-template-columns:1fr;
-
-    }
-
-    .contact-form{
-
-        padding:0 24px 24px;
-
-    }
-
-    .card-header{
-
-        padding:28px 24px 20px;
 
     }
 
@@ -742,7 +1108,7 @@ width:100%;
 
     .contact-features>div{
 
-        border-right:none !important;
+        border-right:none;
 
         border-bottom:1px solid rgba(255,255,255,.08);
 
@@ -754,10 +1120,30 @@ width:100%;
 
     }
 
-    .footer-social{
+}
 
-        flex-wrap:wrap;
+
+
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+
+@media (max-width:576px){
+
+    .contact-info::before{
+
+        background-position:84% center;
+
+    }
+
+    .footer{
+
+        text-align:center;
 
     }
 
 }
+
+
+
+

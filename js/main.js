@@ -1,76 +1,91 @@
-console.log('Euler');
-/*==========================================
-    Reveal al hacer scroll
-==========================================*/
+/*==================================================
+                    EULER
+==================================================*/
 
-const reveals = document.querySelectorAll(".reveal");
+/*==================================================
+            REVEAL ANIMATIONS
+==================================================*/
 
-const observer = new IntersectionObserver((entries)=>{
+function createRevealObserver(selector, threshold = 0.2){
 
-    entries.forEach(entry=>{
+    const elements = document.querySelectorAll(selector);
 
-        if(entry.isIntersecting){
+    if(!elements.length) return;
 
-            entry.target.classList.add("show");
+    const observer = new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },{
+
+        threshold
+
+    });
+
+    elements.forEach(element=>observer.observe(element));
+
+}
+
+
+
+/*==================================================
+                INITIALIZE
+==================================================*/
+
+createRevealObserver(".reveal",0.25);
+
+createRevealObserver(".process-item",0.20);
+
+
+
+/*==================================================
+            RESPONSIVE MENU
+==================================================*/
+
+const menuToggle = document.querySelector(".menu-toggle");
+
+const menu = document.querySelector(".menu");
+
+if(menuToggle && menu){
+
+    menuToggle.addEventListener("click",()=>{
+
+        menu.classList.toggle("active");
+
+    });
+
+
+
+    document.querySelectorAll(".menu a").forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+            menu.classList.remove("active");
+
+        });
+
+    });
+
+
+
+    window.addEventListener("resize",()=>{
+
+        if(window.innerWidth > 992){
+
+            menu.classList.remove("active");
 
         }
 
     });
 
-},{
-    threshold:.25
-});
-
-reveals.forEach(item=>observer.observe(item));
-
-
-/*=====================================
-    ANIMACIÓN PROCESO
-======================================*/
-
-const processItems = document.querySelectorAll('.process-item');
-
-console.log(processItems);
-
-const processObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add('show');
-
-        }
-
-    });
-
-}, {
-
-    threshold: 0.2
-
-});
-
-processItems.forEach(item => {
-
-    processObserver.observe(item);
-
-});
-
-
-const processObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        console.log(entry.isIntersecting);
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-}, {
-    threshold: 0.2
-});
+}

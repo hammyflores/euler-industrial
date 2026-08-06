@@ -1,21 +1,19 @@
-/* ===================================
-   HERO
-=================================== */
+/*==================================================
+                    HERO
+==================================================*/
 
 .hero{
 
-    position: relative;
+    position:relative;
 
-    min-height: 100vh;
+    display:flex;
+    align-items:center;
 
-    display: flex;
+    min-height:100vh;
 
-    align-items: center;
+    overflow:hidden;
 
-    overflow: hidden;
-
-    padding-top:80px;   /* <-- nuevo */
-
+    padding-top:clamp(80px,7vw,100px);
 
     background:
         linear-gradient(
@@ -28,13 +26,19 @@
         ),
         url("../img/hero.webp");
 
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
 
-    background-size: cover;
+    background-size:cover;
 
-    background-position: 72% center;
+    background-position:72% center;
 
 }
+
+
+/*==================================================
+                CONTAINER
+==================================================*/
+
 .hero-container{
 
     width:100%;
@@ -46,11 +50,17 @@
     min-height:100vh;
 
 }
+
+
+/*==================================================
+                CONTENT
+==================================================*/
+
 .hero-content{
 
-    width:620px;
+    width:min(620px,100%);
 
-    margin-top:80px;
+    margin-top:clamp(20px,4vw,80px);
 
     position:relative;
 
@@ -65,63 +75,162 @@
     animation-delay:.25s;
 
 }
+
+
+/*==================================================
+                TAG
+==================================================*/
+
 .hero-tag{
 
     display:inline-block;
 
-    margin-bottom:14px;
+    margin-bottom:clamp(10px,2vw,14px);
 
-    font-size:14px;
+    font-size:clamp(.78rem,.85vw,.9rem);
 
     font-weight:700;
 
-    letter-spacing:4px;
+    letter-spacing:clamp(2px,.3vw,4px);
 
     text-transform:uppercase;
 
     color:#16a34a;
 
 }
+
+
+/*==================================================
+                TITULO
+==================================================*/
+
 .hero h1{
-    font-size:72px;
+
+    font-size:clamp(2rem,5.1vw,4.5rem);
+
     line-height:1.05;
+
     font-weight:800;
-    margin-bottom:28px;
+
+    margin-bottom:clamp(18px,3vw,28px);
+
+    text-wrap:balance;
+
 }
+
 .hero h1 span{
 
     color:#16a34a;
 
 }
-/* ==========================
-   Línea decorativa Hero
-========================== */
+
+
+/*==================================================
+                TEXTO
+==================================================*/
+
+.hero p{
+
+    width:min(560px,100%);
+
+    font-size:clamp(1rem,1.55vw,1.375rem);
+
+    line-height:1.7;
+
+    color:#d8d8d8;
+
+}
+
+
+/*==================================================
+                BOTONES
+==================================================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:clamp(12px,2vw,18px);
+
+    margin-top:clamp(26px,4vw,40px);
+
+    margin-bottom:clamp(40px,6vw,60px);
+
+}
+
+
+/*==================================================
+            BOTONES BASE
+==================================================*/
+
+.btn-primary,
+.btn-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+        clamp(14px,1vw,18px)
+
+        clamp(20px,2vw,34px);
+
+}
+
+
+
+
+/*==================================================
+            LÍNEA DECORATIVA
+==================================================*/
 
 .hero-line{
 
     display:flex;
+
     align-items:center;
-    margin:22px 0 38px;
+
+    margin:
+
+        clamp(18px,2.5vw,22px)
+
+        0
+
+        clamp(28px,4vw,38px);
 
 }
 
 .hero-line .line{
 
     position:relative;
-    width:120px;
+
+    width:clamp(70px,9vw,120px);
+
     height:2px;
+
     background:#16a34a;
+
     overflow:hidden;
 
 }
 
 .hero-line .dot{
 
-    width:12px;
-    height:12px;
+    width:clamp(10px,1vw,12px);
+
+    height:clamp(10px,1vw,12px);
+
     border-radius:50%;
+
     border:2px solid #16a34a;
+
     background:#050505;
+
     transition:.3s;
 
 }
@@ -131,7 +240,9 @@
     background:#16a34a;
 
     box-shadow:
+
         0 0 8px #16a34a,
+
         0 0 18px rgba(22,163,74,.7);
 
 }
@@ -139,49 +250,36 @@
 .hero-line .pulse{
 
     position:absolute;
+
     left:-12px;
+
     top:50%;
+
     width:12px;
+
     height:12px;
+
     border-radius:50%;
+
     background:#6cff96;
 
     transform:translateY(-50%);
 
     box-shadow:
+
         0 0 10px #6cff96,
-        0 0 22px #16a34a;
+
+        0 0 22px rgba(22,163,74,.45);
 
     animation:pulseMove 3s linear infinite;
 
 }
 
 
-.hero p{
 
-    max-width:560px;
-
-    font-size:22px;
-
-    line-height:1.7;
-
-    color:#d8d8d8;
-
-}
-.hero-buttons{
-
-    display:flex;
-
-    gap:18px;
-
-    margin-top:40px;
-
-    margin-bottom:60px;
-
-}
-/* ===================================
-   HERO FEATURES
-=================================== */
+/*==================================================
+                HERO FEATURES
+==================================================*/
 
 .hero-features{
 
@@ -189,7 +287,9 @@
 
     align-items:flex-start;
 
-    margin-top:10px;
+    gap:clamp(14px,2vw,20px);
+
+    margin-top:8px;
 
 }
 
@@ -201,17 +301,33 @@
 
     align-items:flex-start;
 
-    gap:18px;
+    gap:clamp(12px,2vw,18px);
 
     position:relative;
 
+    padding:clamp(12px,1.5vw,14px);
+
+    border-radius:12px;
+
+    transition:
+
+        transform .35s ease,
+
+        background .35s ease;
+
 }
+
+
+
+/*==================================================
+                ICONO
+==================================================*/
 
 .feature-icon{
 
-    width:52px;
+    width:clamp(42px,5vw,52px);
 
-    height:52px;
+    height:clamp(42px,5vw,52px);
 
     border:1px solid rgba(22,163,74,.45);
 
@@ -225,64 +341,89 @@
 
     color:#16a34a;
 
-    font-size:22px;
+    font-size:clamp(18px,2vw,22px);
 
     flex-shrink:0;
 
-    transition:.35s;
+    transition:
+
+        background .35s ease,
+
+        color .35s ease,
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+
+/*==================================================
+                CONTENIDO
+==================================================*/
+
+.feature-content{
+
+    flex:1;
 
 }
 
 .feature-content h3{
 
-    font-size:24px;
+    font-size:clamp(1.05rem,1.9vw,1.5rem);
 
     line-height:1.35;
 
-    margin-bottom:10px;
+    margin-bottom:clamp(6px,1vw,10px);
 
     font-weight:700;
 
     color:#fff;
 
+    transition:.35s;
+
 }
 
 .feature-content p{
 
-    font-size:17px;
+    font-size:clamp(.90rem,1.2vw,1.06rem);
 
     line-height:1.7;
 
     color:#b9b9b9;
 
+    transition:.35s;
+
 }
+
+
+
+/*==================================================
+                DIVISOR
+==================================================*/
 
 .divider{
 
     width:1px;
 
-    background:rgba(255,255,255,.12);
-
-    margin:0 28px;
-
     align-self:stretch;
 
-}
+    background:rgba(255,255,255,.12);
 
+    margin:
 
-/* ===================================
-   FEATURE HOVER
-=================================== */
+        0
 
-.feature{
-
-    transition:all .35s ease;
-
-    padding:14px;
-
-    border-radius:12px;
+        clamp(12px,2vw,28px);
 
 }
+
+
+
+/*==================================================
+                HOVER
+==================================================*/
 
 .feature:hover{
 
@@ -301,6 +442,7 @@
     transform:scale(1.08);
 
     box-shadow:
+
         0 0 18px rgba(22,163,74,.45);
 
 }
@@ -317,6 +459,13 @@
 
 }
 
+
+
+
+/*==================================================
+                BOTÓN PRIMARIO
+==================================================*/
+
 .btn-primary{
 
     display:inline-flex;
@@ -325,7 +474,13 @@
 
     justify-content:center;
 
-    padding:18px 34px;
+    gap:10px;
+
+    padding:
+
+        clamp(14px,1vw,18px)
+
+        clamp(20px,2vw,34px);
 
     background:#16a34a;
 
@@ -333,11 +488,19 @@
 
     text-decoration:none;
 
+    font-size:clamp(.92rem,1vw,1rem);
+
     font-weight:700;
 
     border-radius:4px;
 
-    transition:.3s;
+    transition:
+
+        background .3s ease,
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
 
 }
 
@@ -345,7 +508,19 @@
 
     background:#1cc15b;
 
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 12px 28px rgba(22,163,74,.30);
+
 }
+
+
+
+/*==================================================
+                BOTÓN SECUNDARIO
+==================================================*/
 
 .btn-secondary{
 
@@ -355,40 +530,67 @@
 
     justify-content:center;
 
-    padding:18px 34px;
+    gap:10px;
 
-    border:1px solid rgba(255,255,255,.3);
+    padding:
+
+        clamp(14px,1vw,18px)
+
+        clamp(20px,2vw,34px);
+
+    border:1px solid rgba(255,255,255,.15);
 
     color:#fff;
 
     text-decoration:none;
 
+    font-size:clamp(.92rem,1vw,1rem);
+
+    font-weight:600;
+
     border-radius:4px;
 
-}
+    transition:
 
-@keyframes pulseMove{
+        background .3s ease,
 
-    from{
+        border-color .3s ease,
 
-        left:-12px;
+        transform .3s ease,
 
-    }
-
-    to{
-
-        left:120px;
-
-    }
+        color .3s ease;
 
 }
+
+.btn-secondary:hover{
+
+    background:rgba(255,255,255,.05);
+
+    border-color:#16a34a;
+
+    color:#16a34a;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/*==================================================
+                ANIMACIONES
+==================================================*/
+
 @keyframes heroContent{
 
     from{
 
         opacity:0;
 
-        transform:translateY(40px) scale(.98);
+        transform:
+
+            translateY(40px)
+
+            scale(.98);
 
     }
 
@@ -396,8 +598,155 @@
 
         opacity:1;
 
-        transform:translateY(0) scale(1);
+        transform:
+
+            translateY(0)
+
+            scale(1);
 
     }
 
 }
+
+
+
+@keyframes pulseMove{
+
+    0%{
+
+        left:-12px;
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        left:100%;
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/*==================================================
+                MEJORAS
+==================================================*/
+
+.hero h1,
+.hero p{
+
+    text-wrap:balance;
+
+}
+
+.hero img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+.hero-content>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==================================================
+            RESPONSIVE ESTRUCTURAL
+==================================================*/
+
+@media (max-width:992px){
+
+    .hero{
+
+        min-height:auto;
+
+        padding-bottom:80px;
+
+        background-position:70% center;
+
+    }
+
+    .hero-container{
+
+        min-height:auto;
+
+    }
+
+    .hero-features{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+    }
+
+    .divider{
+
+        display:none;
+
+    }
+
+}
+
+
+
+@media (max-width:768px){
+
+    .hero{
+
+        background-position:74% center;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+@media (max-width:576px){
+
+    .hero{
+
+        background-position:78% center;
+
+    }
+
+}
+

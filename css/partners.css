@@ -1,8 +1,12 @@
-/*======================================
-PARTNERS
-======================================*/
+/*==================================================
+                    PARTNERS
+==================================================*/
 
 .partners{
+
+    position:relative;
+
+    overflow:hidden;
 
     background:#080808;
 
@@ -10,25 +14,17 @@ PARTNERS
 
     border-bottom:1px solid rgba(255,255,255,.06);
 
-    padding:34px 0;
+    padding-block:clamp(24px,3vw,34px);
 
 }
+
+
+
+/*==================================================
+                CONTAINER
+==================================================*/
 
 .partners-container{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:40px;
-
-}
-
-.partner{
-
-    flex:1;
 
     display:flex;
 
@@ -36,34 +32,99 @@ PARTNERS
 
     align-items:center;
 
-    opacity:.55;
+    flex-wrap:wrap;
 
-    transition:.35s;
+    gap:clamp(20px,3vw,40px);
 
 }
+
+
+
+/*==================================================
+                PARTNER
+==================================================*/
+
+.partner{
+
+    flex:1 1 180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:140px;
+
+    opacity:.55;
+
+    transition:
+
+        opacity .35s ease,
+
+        transform .35s ease;
+
+}
+
+
 
 .partner:hover{
 
     opacity:1;
 
+    transform:translateY(-2px);
+
 }
+
+
+
+/*==================================================
+                LOGO
+==================================================*/
 
 .partner img{
 
-    max-width:160px;
+    display:block;
 
-    width:50%;
+    width:min(50%,160px);
 
     height:auto;
 
     filter:grayscale(100%) brightness(1.6);
 
-    transition:.35s;
+    transition:
+
+        filter .35s ease,
+
+        transform .35s ease;
 
 }
+
+
 
 .partner:hover img{
 
     filter:none;
 
+    transform:scale(1.03);
+
 }
+
+
+
+/*==================================================
+                SMALL MOBILE
+==================================================*/
+
+@media (max-width:576px){
+
+    .partner{
+
+        flex:1 1 45%;
+
+        min-width:120px;
+
+    }
+
+}
+

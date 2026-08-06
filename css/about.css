@@ -1,21 +1,20 @@
-
-/*=========================================
-                NOSOTROS
-=========================================*/
+/*==================================================
+                    ABOUT
+==================================================*/
 
 .about{
 
     position:relative;
-
-     min-height:560px;
-
-    padding:120px 0;
 
     display:flex;
 
     align-items:center;
 
     overflow:hidden;
+
+    min-height:clamp(420px,60vw,560px);
+
+    padding-block:clamp(70px,8vw,120px);
 
     background:
 
@@ -37,12 +36,19 @@
 
         url("../img/about.webp");
 
-      background-size:110%;
+    background-repeat:no-repeat;
+
+    background-size:cover;
 
     background-position:center 25%;
 
-    background-repeat:no-repeat;
 }
+
+
+
+/*==================================================
+            CAPAS AUXILIARES
+==================================================*/
 
 .about-bg,
 .about-overlay{
@@ -51,59 +57,83 @@
 
 }
 
+
+
+/*==================================================
+                CONTAINER
+==================================================*/
+
 .about-container{
-
-    width:100%;
-
-    max-width:1280px;
-
-    margin:0 auto;
-
-    padding:0 30px;
 
     position:relative;
 
     z-index:2;
 
+    width:min(1280px,100%);
+
+    margin:auto;
+
+    padding-inline:clamp(18px,3vw,30px);
+
 }
+
+
+
+/*==================================================
+                CONTENT
+==================================================*/
 
 .about-content{
 
-    max-width:540px;
+    width:min(540px,100%);
 
-    padding:70px 0 70px;
+    padding-block:clamp(30px,6vw,70px);
 
 }
+
+
+
+/*==================================================
+                TAG
+==================================================*/
 
 .about-tag{
 
     display:inline-block;
 
+    margin-bottom:clamp(14px,2vw,22px);
+
     color:#16a34a;
 
-    font-size:14px;
+    font-size:clamp(.78rem,.9vw,.9rem);
 
     font-weight:700;
 
-    letter-spacing:4px;
+    letter-spacing:clamp(2px,.3vw,4px);
 
     text-transform:uppercase;
 
-    margin-bottom:22px;
-
 }
+
+
+
+/*==================================================
+                TITLE
+==================================================*/
 
 .about-title{
 
     color:#fff;
 
-    font-size:64px;
+    font-size:clamp(2rem,4.5vw,4rem);
 
     font-weight:800;
 
     line-height:1.05;
 
-    margin-bottom:30px;
+    margin-bottom:clamp(20px,3vw,30px);
+
+    text-wrap:balance;
 
 }
 
@@ -113,79 +143,162 @@
 
 }
 
+
+
+/*==================================================
+                TEXT
+==================================================*/
+
 .about-text{
+
+    width:min(520px,100%);
 
     color:#d6d6d6;
 
-    font-size:20px;
+    font-size:clamp(1rem,1.45vw,1.25rem);
 
     line-height:1.8;
 
-    max-width:520px;
+}
+
+
+
+/*==================================================
+            MEJORAS
+==================================================*/
+
+.about-content>*{
+
+    position:relative;
+
+    z-index:2;
 
 }
 
-/*=========================================
-            BENEFICIOS
-=========================================*/
+.about img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+
+/*==================================================
+        RESPONSIVE ESTRUCTURAL
+==================================================*/
+
+@media (max-width:768px){
+
+    .about{
+
+        background-position:68% center;
+
+    }
+
+}
+
+
+
+@media (max-width:576px){
+
+    .about{
+
+        background-position:72% center;
+
+    }
+
+}
+
+
+/*==================================================
+                ABOUT BENEFITS
+==================================================*/
 
 .about-benefits{
 
     background:#050505;
 
-    padding:110px 0 90px;
+    padding-block:
+
+        clamp(70px,8vw,110px)
+
+        clamp(60px,7vw,90px);
 
 }
+
+
+
+/*==================================================
+                CONTAINER
+==================================================*/
 
 .about-benefits .container{
 
-    max-width:1280px;
+    width:min(1280px,100%);
 
     margin:auto;
 
-    padding:0 30px;
+    padding-inline:clamp(18px,3vw,30px);
 
 }
 
-/*=========================================
-            TITULO
-=========================================*/
+
+
+/*==================================================
+                HEADER
+==================================================*/
 
 .benefits-header{
 
     text-align:center;
 
-    margin-bottom:65px;
+    margin-bottom:clamp(40px,6vw,65px);
 
 }
+
+
+
+/*==================================================
+                SECTION TAG
+==================================================*/
 
 .benefits-header .section-tag{
 
     display:inline-block;
 
+    margin-bottom:clamp(12px,2vw,16px);
+
     color:#16a34a;
 
-    font-size:14px;
+    font-size:clamp(.78rem,.9vw,.9rem);
 
     font-weight:700;
 
-    letter-spacing:4px;
+    letter-spacing:clamp(2px,.3vw,4px);
 
     text-transform:uppercase;
 
-    margin-bottom:16px;
-
 }
+
+
+
+/*==================================================
+                TITLE
+==================================================*/
 
 .benefits-header h2{
 
     color:#fff;
 
-    font-size:52px;
+    font-size:clamp(2rem,4vw,3.25rem);
 
     font-weight:800;
 
     line-height:1.08;
+
+    text-wrap:balance;
 
 }
 
@@ -195,124 +308,29 @@
 
 }
 
-/*=========================================
-            GRID
-=========================================*/
+
+
+/*==================================================
+                GRID
+==================================================*/
 
 .benefits-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:
 
-    gap:18px;
+        repeat(auto-fit,minmax(min(220px,100%),1fr));
 
-}
-
-/*=========================================
-            TARJETAS
-=========================================*/
-
-.benefit-card{
-
-    background:#0b0b0b;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:16px;
-
-    padding:32px 24px;
-
-    min-height:280px;
-
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
+    gap:clamp(16px,2vw,18px);
 
 }
 
-.benefit-card:hover{
 
-    transform:translateY(-5px);
 
-    border-color:rgba(22,163,74,.35);
-
-    box-shadow:
-
-        0 14px 30px rgba(0,0,0,.28);
-
-}
-
-/*=========================================
-            TITULO
-=========================================*/
-
-.benefit-card h3{
-
-    color:#fff;
-
-    font-size:19px;
-
-    font-weight:700;
-
-    line-height:1.45;
-
-    margin-bottom:22px;
-
-}
-
-/*=========================================
-            LINEA
-=========================================*/
-
-.benefit-divider{
-
-    width:42px;
-
-    height:3px;
-
-    background:#16a34a;
-
-    border-radius:20px;
-
-    margin-bottom:24px;
-
-    transition:.35s;
-
-}
-
-.benefit-card:hover .benefit-divider{
-
-    width:60px;
-
-}
-
-/*=========================================
-            TEXTO
-=========================================*/
-
-.benefit-card p{
-
-    color:#bdbdbd;
-
-    font-size:15px;
-
-    line-height:1.8;
-
-    transition:.35s;
-
-}
-
-.benefit-card:hover p{
-
-    color:#ececec;
-
-}
-
-/*=========================================
-            EFECTO
-=========================================*/
+/*==================================================
+                BENEFIT CARD
+==================================================*/
 
 .benefit-card{
 
@@ -320,7 +338,41 @@
 
     overflow:hidden;
 
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+    min-height:clamp(220px,30vw,280px);
+
+    padding:
+
+        clamp(22px,3vw,32px)
+
+        clamp(18px,2vw,24px);
+
+    background:#0b0b0b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
 }
+
+
+
+/*==================================================
+                TOP BAR
+==================================================*/
 
 .benefit-card::before{
 
@@ -342,7 +394,91 @@
 
     transform-origin:left;
 
-    transition:.35s;
+    transition:transform .35s ease;
+
+}
+
+
+
+/*==================================================
+                TITLE
+==================================================*/
+
+.benefit-card h3{
+
+    color:#fff;
+
+    font-size:clamp(1rem,1.5vw,1.2rem);
+
+    font-weight:700;
+
+    line-height:1.45;
+
+    margin-bottom:clamp(16px,2vw,22px);
+
+    text-wrap:balance;
+
+}
+
+
+
+/*==================================================
+                DIVIDER
+==================================================*/
+
+.benefit-divider{
+
+    width:clamp(36px,4vw,42px);
+
+    height:3px;
+
+    margin-bottom:clamp(18px,2vw,24px);
+
+    border-radius:20px;
+
+    background:#16a34a;
+
+    transition:
+
+        width .35s ease;
+
+}
+
+
+
+/*==================================================
+                TEXT
+==================================================*/
+
+.benefit-card p{
+
+    margin:0;
+
+    color:#bdbdbd;
+
+    font-size:clamp(.90rem,1.1vw,.95rem);
+
+    line-height:1.8;
+
+    transition:color .35s ease;
+
+}
+
+
+
+/*==================================================
+                HOVER
+==================================================*/
+
+.benefit-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(22,163,74,.35);
+
+    box-shadow:
+
+        0 14px 30px rgba(0,0,0,.28);
 
 }
 
@@ -352,91 +488,167 @@
 
 }
 
-/*=========================================
-        NUESTRO COMPROMISO
-=========================================*/
+.benefit-card:hover .benefit-divider{
+
+    width:clamp(52px,5vw,60px);
+
+}
+
+.benefit-card:hover p{
+
+    color:#ececec;
+
+}
+
+
+
+/*==================================================
+                IMPROVEMENTS
+==================================================*/
+
+.benefit-card>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.benefit-card img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/*==================================================
+                COMMITMENT
+==================================================*/
 
 .about-commitment{
 
     background:#050505;
 
-    padding:50px 0 120px;
+    padding-block:
+
+        clamp(40px,5vw,50px)
+
+        clamp(70px,8vw,120px);
 
 }
+
+
+
+/*==================================================
+                CONTAINER
+==================================================*/
 
 .about-commitment .container{
 
-    max-width:1280px;
+    width:min(1280px,100%);
 
     margin:auto;
 
-    padding:0 30px;
+    padding-inline:clamp(18px,3vw,30px);
 
 }
 
-/*=========================================
-        CABECERA
-=========================================*/
+
+
+/*==================================================
+                TOP
+==================================================*/
 
 .commitment-top{
 
     display:grid;
 
-    grid-template-columns:320px 1fr;
+    grid-template-columns:
 
-    gap:70px;
+        minmax(260px,320px)
+
+        minmax(0,1fr);
+
+    gap:clamp(30px,6vw,70px);
 
     align-items:start;
 
-    margin-bottom:70px;
+    margin-bottom:clamp(40px,6vw,70px);
 
-    padding-top:60px;
+    padding-top:clamp(40px,5vw,60px);
 
     border-top:1px solid rgba(255,255,255,.08);
 
 }
 
+
+
+/*==================================================
+                TITLE
+==================================================*/
+
 .commitment-title .section-tag{
 
     display:inline-block;
 
+    margin-bottom:clamp(12px,2vw,14px);
+
     color:#16a34a;
 
-    font-size:14px;
+    font-size:clamp(.78rem,.9vw,.9rem);
 
     font-weight:700;
 
-    letter-spacing:4px;
+    letter-spacing:clamp(2px,.3vw,4px);
 
     text-transform:uppercase;
 
-    margin-bottom:14px;
-
 }
+
+
 
 .commitment-title h2{
 
     color:#fff;
 
-    font-size:52px;
+    font-size:clamp(2rem,4vw,3.25rem);
 
     font-weight:800;
 
     line-height:1.05;
 
+    text-wrap:balance;
+
 }
+
+
+
+/*==================================================
+            DESCRIPTION
+==================================================*/
+
+.commitment-description{
+
+    width:100%;
+
+}
+
+
 
 .commitment-description p{
 
     color:#cfcfcf;
 
-    font-size:18px;
+    font-size:clamp(.95rem,1.3vw,1.125rem);
 
-    line-height:1.8;
+    line-height:1.85;
 
-    margin-bottom:22px;
+    margin-bottom:clamp(16px,2vw,22px);
 
 }
+
+
 
 .commitment-description p:last-child{
 
@@ -444,9 +656,49 @@
 
 }
 
-/*=========================================
-        TIMELINE
-=========================================*/
+
+
+/*==================================================
+                IMPROVEMENTS
+==================================================*/
+
+.commitment-title,
+.commitment-description{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+.commitment-title h2,
+.commitment-description p{
+
+    text-wrap:balance;
+
+}
+
+
+
+/*==================================================
+        RESPONSIVE ESTRUCTURAL
+==================================================*/
+
+@media (max-width:768px){
+
+    .commitment-top{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+                TIMELINE
+==================================================*/
 
 .commitment-timeline{
 
@@ -454,13 +706,27 @@
 
     display:grid;
 
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:
 
-    gap:24px;
+        repeat(auto-fit,minmax(min(180px,100%),1fr));
 
-    margin:50px 0 90px;
+    gap:clamp(20px,2vw,24px);
+
+    margin:
+
+        clamp(40px,6vw,50px)
+
+        0
+
+        clamp(60px,8vw,90px);
 
 }
+
+
+
+/*==================================================
+                TIMELINE LINE
+==================================================*/
 
 .timeline-line{
 
@@ -479,8 +745,16 @@
     opacity:.45;
 
     z-index:1;
- display:none;
+
+    display:none;
+
 }
+
+
+
+/*==================================================
+                ITEM
+==================================================*/
 
 .timeline-item{
 
@@ -498,11 +772,19 @@
 
 }
 
-..timeline-dot{
 
-    width:16px;
 
-    height:16px;
+/*==================================================
+                DOT
+==================================================*/
+
+.timeline-dot{
+
+    width:clamp(14px,1.5vw,16px);
+
+    height:clamp(14px,1.5vw,16px);
+
+    margin:0 auto clamp(18px,2vw,24px);
 
     border-radius:50%;
 
@@ -512,44 +794,61 @@
 
     box-shadow:0 0 10px rgba(22,163,74,.35);
 
-    margin:0 auto 24px;
-
     flex-shrink:0;
 
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
+
 }
+
+
+
 .timeline-item:hover .timeline-dot{
 
     transform:scale(1.15);
 
 }
 
+
+
+/*==================================================
+                TEXT
+==================================================*/
+
 .timeline-item p{
-
-    color:#efefef;
-
-    font-size:18px;
-
-    line-height:1.45;
-
-    font-weight:500;
 
     max-width:170px;
 
     margin:0 auto;
 
+    color:#efefef;
+
+    font-size:clamp(.95rem,1.3vw,1.125rem);
+
+    line-height:1.45;
+
+    font-weight:500;
+
+    text-wrap:balance;
+
 }
 
-/*=========================================
-        CIERRE
-=========================================*/
+
+
+/*==================================================
+                CLOSING
+==================================================*/
 
 .commitment-closing{
 
-    max-width:900px;
+    max-width:min(900px,100%);
 
     margin:0 auto;
 
-    padding-top:50px;
+    padding-top:clamp(40px,5vw,50px);
 
     border-top:1px solid rgba(255,255,255,.08);
 
@@ -557,17 +856,23 @@
 
 }
 
+
+
 .commitment-closing p{
 
     color:#d8d8d8;
 
-    font-size:24px;
+    font-size:clamp(1.1rem,2vw,1.5rem);
 
     line-height:1.8;
 
     font-weight:400;
 
+    text-wrap:balance;
+
 }
+
+
 
 .commitment-closing span{
 
@@ -576,3 +881,65 @@
     font-weight:700;
 
 }
+
+
+
+/*==================================================
+                IMPROVEMENTS
+==================================================*/
+
+.timeline-item>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+.timeline-item img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+
+/*==================================================
+        RESPONSIVE ESTRUCTURAL
+==================================================*/
+
+@media (max-width:768px){
+
+    .commitment-timeline{
+
+        grid-template-columns:1fr;
+
+        gap:32px;
+
+    }
+
+    .timeline-item p{
+
+        max-width:420px;
+
+    }
+
+}
+
+
+
+@media (max-width:576px){
+
+    .commitment-closing{
+
+        padding-top:36px;
+
+    }
+
+}
+
+

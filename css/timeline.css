@@ -1,18 +1,18 @@
 /*==================================================
-TIMELINE
+                    TIMELINE
 ==================================================*/
 
 .timeline{
 
     position:fixed;
 
-    left:110px;
+    left:clamp(24px,6vw,110px);
 
-    top:110px;
+    top:clamp(90px,9vw,110px);
 
-    width:24px;
+    width:clamp(20px,2vw,24px);
 
-    height:calc(100vh - 150px);
+    height:calc(100vh - clamp(130px,12vw,150px));
 
     z-index:900;
 
@@ -20,13 +20,21 @@ TIMELINE
 
 }
 
+
+
+/*==================================================
+                BASE LINE
+==================================================*/
+
 .timeline-line{
 
     position:absolute;
 
-    left:11px;
+    left:50%;
 
     top:0;
+
+    transform:translateX(-50%);
 
     width:2px;
 
@@ -36,42 +44,92 @@ TIMELINE
 
 }
 
+
+
+/*==================================================
+                PROGRESS
+==================================================*/
+
 .timeline-progress{
 
     position:absolute;
 
-    left:11px;
+    left:50%;
 
     top:0;
+
+    transform:translateX(-50%);
 
     width:2px;
 
     height:0;
 
-    background:#16a34a;
+    background:var(--green);
 
     transition:height .15s linear;
 
 }
 
+
+
+/*==================================================
+                DOT
+==================================================*/
+
 .timeline-dot{
 
     position:absolute;
 
-    left:2px;
+    left:50%;
 
     top:0;
 
-    width:20px;
+    transform:translateX(-50%);
 
-    height:20px;
+    width:clamp(18px,1.5vw,20px);
+
+    height:clamp(18px,1.5vw,20px);
 
     border-radius:50%;
 
-    background:#16a34a;
+    background:var(--green);
 
     box-shadow:
-        0 0 10px #16a34a,
+
+        0 0 10px var(--green),
+
         0 0 22px rgba(22,163,74,.55);
+
+}
+
+
+
+/*==================================================
+            SMALL DESKTOP
+==================================================*/
+
+@media (max-width:1200px){
+
+    .timeline{
+
+        left:clamp(20px,3vw,40px);
+
+    }
+
+}
+
+
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:992px){
+
+    .timeline{
+
+        display:none;
+
+    }
 
 }

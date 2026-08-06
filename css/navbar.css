@@ -1,11 +1,6 @@
 /*==================================================
-  NAVBAR
-  Euler Industrial Solutions
+                    HEADER
 ==================================================*/
-
-/*-------------------------
-HEADER
---------------------------*/
 
 .header{
 
@@ -18,65 +13,38 @@ HEADER
 
     z-index:1000;
 
-    padding:18px 0;
+    padding-block:clamp(12px,1.5vw,24px);
 
-    background:rgba(5,5,5,.80);
-
-    backdrop-filter:blur(10px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.05);
-
-    transition:all .35s ease;
-
-}
-
-/* Estado al hacer scroll */
-
-.header.scrolled{
-
-    background:rgba(5,5,5,.92);
-
-    backdrop-filter:blur(14px);
-
-    box-shadow:0 8px 30px rgba(0,0,0,.35);
+    transition:
+        background .35s ease,
+        padding .35s ease,
+        box-shadow .35s ease;
 
 }
 
 
-/*-------------------------
-NAVBAR
---------------------------*/
+
+/*==================================================
+                    NAVBAR
+==================================================*/
 
 .navbar{
 
-    
+    display:flex;
 
-    top:0;
+    justify-content:space-between;
 
-    left:0;
+    align-items:center;
 
-    width:100%;
-
-    z-index:1000;
-
-    background:rgba(0,0,0,.55);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-    transition:all .35s ease;
+    gap:clamp(20px,3vw,50px);
 
 }
 
 
-/*-------------------------
-LOGO
---------------------------*/
+
+/*==================================================
+                    LOGO
+==================================================*/
 
 .logo{
 
@@ -90,16 +58,19 @@ LOGO
 
 .logo img{
 
-    width:215px;
-
     display:block;
+
+    width:clamp(140px,14vw,220px);
+
+    height:auto;
 
 }
 
 
-/*-------------------------
-MENU
---------------------------*/
+
+/*==================================================
+                    MENÚ
+==================================================*/
 
 .menu{
 
@@ -107,13 +78,13 @@ MENU
 
     align-items:center;
 
-    gap:42px;
+    justify-content:center;
+
+    gap:clamp(18px,2vw,36px);
+
+    margin-left:auto;
 
     list-style:none;
-
-    margin:0;
-
-    padding:0;
 
 }
 
@@ -123,39 +94,38 @@ MENU
 
 }
 
+
+
+/*==================================================
+                    LINKS
+==================================================*/
+
 .menu a{
 
     position:relative;
 
-    color:#ffffff;
+    display:inline-flex;
+
+    align-items:center;
 
     text-decoration:none;
 
-    font-size:16px;
+    color:#fff;
+
+    font-size:clamp(.90rem,.9vw,1rem);
 
     font-weight:500;
 
-    transition:.25s;
+    transition:
+        color .30s ease;
 
 }
 
-/* Hover */
 
-.menu a:hover{
 
-    color:#18b217;
-
-}
-
-/* Link activo */
-
-.menu a.active{
-
-    color:#ffffff;
-
-}
-
-/* Línea inferior */
+/*==================================================
+                LÍNEA INFERIOR
+==================================================*/
 
 .menu a::after{
 
@@ -163,25 +133,41 @@ MENU
 
     position:absolute;
 
-    left:50%;
+    left:0;
 
-    bottom:-14px;
-
-    transform:translateX(-50%);
+    bottom:-8px;
 
     width:0;
 
     height:2px;
 
-    background:#15850F;
+    background:#16a34a;
 
-    transition:.30s;
+    transition:.35s;
+
+}
+
+.menu a:hover{
+
+    color:#16a34a;
 
 }
 
 .menu a:hover::after{
 
     width:100%;
+
+}
+
+
+
+/*==================================================
+                LINK ACTIVO
+==================================================*/
+
+.menu a.active{
+
+    color:#16a34a;
 
 }
 
@@ -192,65 +178,62 @@ MENU
 }
 
 
-/*-------------------------
-BOTÓN
---------------------------*/
+
+/*==================================================
+                BOTÓN NAV
+==================================================*/
 
 .btn-nav{
 
-    display:flex;
-
-    align-items:center;
+    display:inline-flex;
 
     justify-content:center;
 
-    gap:14px;
+    align-items:center;
 
-    min-width:240px;
+    flex-shrink:0;
 
-    height:58px;
+    min-width:clamp(185px,16vw,220px);
 
-    border:1px solid #15850F;
+    height:clamp(50px,4vw,58px);
 
-    color:#ffffff;
+    padding-inline:clamp(20px,2vw,32px);
+
+    background:#16a34a;
+
+    color:#fff;
 
     text-decoration:none;
 
-    font-weight:600;
+    font-size:clamp(.88rem,.9vw,1rem);
 
-    transition:.30s;
+    font-weight:700;
+
+    border-radius:4px;
+
+    transition:
+        transform .30s ease,
+        background .30s ease,
+        box-shadow .30s ease;
 
 }
 
 .btn-nav:hover{
 
-    background:#15850F;
+    background:#1db45a;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 26px rgba(22,163,74,.35);
 
 }
 
 
-/* Flecha */
 
-.btn-nav::after{
-
-    content:"→";
-
-    font-size:20px;
-
-    transition:.25s;
-
-}
-
-.btn-nav:hover::after{
-
-    transform:translateX(6px);
-
-}
-
-
-/*-------------------------
-MENU MOBILE
---------------------------*/
+/*==================================================
+            BOTÓN HAMBURGUESA
+==================================================*/
 
 .menu-toggle{
 
@@ -262,42 +245,110 @@ MENU MOBILE
 
     cursor:pointer;
 
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:6px;
+
+    z-index:1200;
+
 }
 
 .menu-toggle span{
-
-    display:block;
 
     width:28px;
 
     height:2px;
 
-    background:white;
+    background:#fff;
 
-    margin:6px auto;
+    transition:.35s;
 
 }
 
 
-/*-------------------------
-RESPONSIVE
---------------------------*/
+/*==================================================
+                DRAWER MENU
+==================================================*/
 
-@media(max-width:1100px){
+.menu-overlay{
 
-    .menu{
+    position:fixed;
 
-        gap:26px;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(3px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+
+    z-index:1090;
+
+}
+
+.menu-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+/*==================================================
+            HAMBURGER ANIMATION
+==================================================*/
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:
+        translateY(8px)
+        rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:
+        translateY(-8px)
+        rotate(-45deg);
+
+}
+
+
+
+/*==================================================
+                MOBILE MENU
+==================================================*/
+
+@media (max-width:992px){
+
+    .header{
+
+        padding-block:14px;
 
     }
 
-}
+    .navbar{
 
-@media(max-width:992px){
-
-    .menu{
-
-        display:none;
+        gap:20px;
 
     }
 
@@ -309,8 +360,203 @@ RESPONSIVE
 
     .menu-toggle{
 
-        display:block;
+        display:flex;
+
+    }
+
+    .menu{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:min(340px,88vw);
+
+        height:100vh;
+
+        margin:0;
+
+        padding:110px 40px 60px;
+
+        background:#050505;
+
+        border-left:1px solid rgba(255,255,255,.06);
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        align-items:flex-start;
+
+        gap:28px;
+
+        transition:right .35s ease;
+
+        z-index:1100;
+
+        overflow-y:auto;
+
+    }
+
+    .menu.active{
+
+        right:0;
+
+    }
+
+    .menu li{
+
+        width:100%;
+
+    }
+
+    .menu a{
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        font-size:1.05rem;
+
+        padding-bottom:12px;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .menu a::after{
+
+        display:none;
+
+    }
+
+    .menu-mobile-button{
+
+        display:flex;
+
+        width:100%;
+
+        margin-top:18px;
+
+    }
+
+    .menu-mobile-button .btn-nav{
+
+        display:flex;
+
+        width:100%;
+
+        min-width:0;
+
+        height:54px;
 
     }
 
 }
+
+
+
+/*==================================================
+                SMALL MOBILE
+==================================================*/
+
+@media (max-width:576px){
+
+    .header{
+
+        padding-block:12px;
+
+    }
+
+    .logo img{
+
+        width:150px;
+
+    }
+
+    .menu{
+
+        width:100%;
+
+        padding:
+
+            95px
+
+            28px
+
+            40px;
+
+    }
+
+    .menu a{
+
+        font-size:1rem;
+
+    }
+
+}
+
+
+
+/*==================================================
+            SCROLLED HEADER
+==================================================*/
+
+.header.scrolled{
+
+    background:rgba(5,5,5,.92);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+
+        0 8px 30px rgba(0,0,0,.30);
+
+}
+
+
+
+/*==================================================
+                IMPROVEMENTS
+==================================================*/
+
+.logo img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+.menu a{
+
+    white-space:nowrap;
+
+}
+
+.btn-nav{
+
+    white-space:nowrap;
+
+}
+
+.menu{
+
+    will-change:right;
+
+}
+
+.menu-toggle span{
+
+    transform-origin:center;
+
+}
+
