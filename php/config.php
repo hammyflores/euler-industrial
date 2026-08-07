@@ -20,7 +20,7 @@ define('SMTP_PORT', 587);
 define('SMTP_USERNAME', 'sales@eulerindustrial.com');
 
 // Agregar cuando tengas la contraseña
-define('SMTP_PASSWORD', '');
+define('SMTP_PASSWORD', 'IRevenueGain2026');
 
 /*==================================================
                 REMITENTE
