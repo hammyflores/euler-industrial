@@ -1242,223 +1242,259 @@ src="img/proyecto4.webp" alt="Robot">
 
         </div>
 
-        <!--==============================
-                FORMULARIO
-        ==============================-->
 
-        <div class="contact-card">
 
-            <div class="card-header">
 
-                <i data-lucide="mail"></i>
 
-                <h3>
 
-                    Envíenos un mensaje
+       <!--==============================
+            FORMULARIO
+==============================-->
 
-                </h3>
+<div class="contact-card">
+
+    <div class="card-header">
+
+        <i data-lucide="mail"></i>
+
+        <h3>
+            Envíenos un mensaje
+        </h3>
+
+    </div>
+
+    <form
+        class="contact-form"
+        id="contactForm"
+        action="php/contact.php"
+        method="POST">
+
+        <div class="contact-row">
+
+            <div class="field">
+
+                <label for="nombre">
+                    Nombre completo
+                </label>
+
+                <input
+                    id="nombre"
+                    type="text"
+                    name="nombre"
+                    placeholder="Ingrese su nombre"
+                    autocomplete="name"
+                    required>
 
             </div>
 
-            <form class="contact-form">
-
-                <div class="contact-row">
-
-                    <div class="field">
-
-                        <label>
-
-                            Nombre completo
-
-                        </label>
-
-                        <input
-                            type="text"
-                            placeholder="Ingrese su nombre">
-
-                    </div>
-
-                    <div class="field">
-
-                        <label>
-
-                            Empresa
-
-                        </label>
-
-                        <input
-                            type="text"
-                            placeholder="Nombre de su empresa">
-
-                    </div>
-
-                </div>
-
-                <div class="contact-row">
-
-                    <div class="field">
-
-                        <label>
-
-                            Correo electrónico
-
-                        </label>
-
-                        <input
-                            type="email"
-                            placeholder="correo@empresa.com">
-
-                    </div>
-
-                    <div class="field">
-
-                        <label>
-
-                            Teléfono
-
-                        </label>
-
-                        <input
-                            type="text"
-                            placeholder="(81) 1234 5678">
-
-                    </div>
-
-                </div>
-
-                <div class="field">
-
-                    <label>
-
-                        Servicio de interés
-
-                    </label>
-
-                    <select>
-
-                        <option>
-
-                            Seleccione un servicio
-
-                        </option>
-
-                        <option>
-
-                            Automatización Industrial
-
-                        </option>
-
-                        <option>
-
-                            Desarrollo de Software
-
-                        </option>
-
-                        <option>
-
-                            Compras Indirectas
-
-                        </option>
-
-                        <option>
-
-                            Refacciones Industriales
-
-                        </option>
-
-                    </select>
-
-                </div>
-
-                <div class="field">
-
-                    <label>
-
-                        Mensaje
-
-                    </label>
-
-                    <textarea
-                        rows="5"
-                        placeholder="Cuéntenos brevemente sobre su proyecto..."></textarea>
-
-                </div>
-
-                <button
-                    class="btn-primary"
-                    type="submit">
-
-                    SOLICITAR COTIZACIÓN
-
-                    <i data-lucide="arrow-right"></i>
-
-                </button>
-
-            </form>
-
-            <div class="contact-features">
-
-                <div>
-
-                    <i data-lucide="user-round"></i>
-
-                    <span>
-
-                        Atención
-
-                        <strong>
-
-                            personalizada
-
-                        </strong>
-
-                    </span>
-
-                </div>
-
-                <div>
-
-                    <i data-lucide="zap"></i>
-
-                    <span>
-
-                        Respuesta
-
-                        <strong>
-
-                            rápida
-
-                        </strong>
-
-                    </span>
-
-                </div>
-
-                <div>
-
-                    <i data-lucide="settings"></i>
-
-                    <span>
-
-                        Soluciones
-
-                        <strong>
-
-                            a la medida
-
-                        </strong>
-
-                    </span>
-
-                </div>
+            <div class="field">
+
+                <label for="empresa">
+                    Empresa
+                </label>
+
+                <input
+                    id="empresa"
+                    type="text"
+                    name="empresa"
+                    placeholder="Nombre de su empresa"
+                    autocomplete="organization">
 
             </div>
 
         </div>
 
+        <div class="contact-row">
+
+            <div class="field">
+
+                <label for="email">
+                    Correo electrónico
+                </label>
+
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="correo@empresa.com"
+                    autocomplete="email"
+                    required>
+
+            </div>
+
+            <div class="field">
+
+                <label for="telefono">
+                    Teléfono
+                </label>
+
+                <input
+                    id="telefono"
+                    type="tel"
+                    name="telefono"
+                    placeholder="(867) 255 4734"
+                    autocomplete="tel">
+
+            </div>
+
+        </div>
+
+        <div class="field">
+
+            <label for="servicio">
+                Servicio de interés
+            </label>
+
+            <select
+                id="servicio"
+                name="servicio"
+                required>
+
+                <option value="" selected disabled>
+                    Seleccione un servicio
+                </option>
+
+                <option value="Automatización Industrial">
+                    Automatización Industrial
+                </option>
+
+                <option value="Desarrollo de Software">
+                    Desarrollo de Software
+                </option>
+
+                <option value="Compras Indirectas">
+                    Compras Indirectas
+                </option>
+
+                <option value="Refacciones Industriales">
+                    Refacciones Industriales
+                </option>
+
+                <option value="Servicios de Ingeniería">
+                    Servicios de Ingeniería
+                </option>
+
+                <option value="Servicios de Mantenimiento">
+                    Servicios de Mantenimiento
+                </option>
+
+                <option value="Servicios de Consultoría">
+                    Servicios de Consultoría
+                </option>
+
+                <option value="Servicios Residenciales">
+                    Servicios Residenciales
+                </option>
+
+                <option value="Servicios de Soporte Técnico">
+                    Servicios de Soporte Técnico
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="field">
+
+            <label for="mensaje">
+                Mensaje
+            </label>
+
+            <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Cuéntenos brevemente sobre su proyecto..."
+                required></textarea>
+
+        </div>
+
+
+        <div class="field honeypot">
+
+    <label for="website">
+        Website
+    </label>
+
+    <input
+        type="text"
+        id="website"
+        name="website"
+        autocomplete="off"
+        tabindex="-1">
+
+</div>
+
+<div id="formMessage" class="form-message"></div>
+
+        <button
+            class="btn-primary"
+            type="submit">
+
+            SOLICITAR COTIZACIÓN
+
+            <i data-lucide="arrow-right"></i>
+
+        </button>
+
+    </form>
+
+    <div class="contact-features">
+
+        <div>
+
+            <i data-lucide="user-round"></i>
+
+            <span>
+
+                Atención
+
+                <strong>
+                    personalizada
+                </strong>
+
+            </span>
+
+        </div>
+
+        <div>
+
+            <i data-lucide="zap"></i>
+
+            <span>
+
+                Respuesta
+
+                <strong>
+                    rápida
+                </strong>
+
+            </span>
+
+        </div>
+
+        <div>
+
+            <i data-lucide="settings"></i>
+
+            <span>
+
+                Soluciones
+
+                <strong>
+                    a la medida
+                </strong>
+
+            </span>
+
+        </div>
+
     </div>
 
-</section>
+</div>
+
+
+
 
 <!--=====================================
             FOOTER
@@ -1479,7 +1515,7 @@ src="img/proyecto4.webp" alt="Robot">
 
     </a>
 
-    <a href="https://www.facebook.com/EulerIndustrialSolutions"
+    <a href="https://www.facebook.com/profile.php?id=61591525834537&rdid=dMoH5UAOY0vX3ncd&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BiogedLAn%2F#"
        target="_blank"
        rel="noopener noreferrer"
        aria-label="Facebook">

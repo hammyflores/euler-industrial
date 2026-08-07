@@ -73,7 +73,7 @@
 
     margin-top:clamp(16px,1.5vw,30px);
 
-    margin-left:clamp(24px,2vw,40px);
+    /* margin-left:clamp(24px,2vw,40px); */
 
     position:relative;
 
@@ -728,11 +728,19 @@
 
 @media (max-width:768px){
 
-    .hero{
+    .container{
 
-        background-position:74% center;
+         padding-inline:clamp(20px,4vw,70px);
 
     }
+
+    .hero{
+
+        background-position:72% center;
+
+    }
+
+}
 
     .hero-buttons{
 
