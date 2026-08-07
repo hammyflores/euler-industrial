@@ -6,7 +6,7 @@
 
     position:fixed;
 
-    left:clamp(24px,6vw,110px);
+    left:clamp(12px,2vw,40px);
 
     top:clamp(90px,9vw,110px);
 
@@ -73,10 +73,9 @@
 
 
 /*==================================================
-                DOT
+                DOT cursor
 ==================================================*/
-
-.timeline-dot{
+.timeline-cursor{
 
     position:absolute;
 

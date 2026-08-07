@@ -943,3 +943,20 @@
 }
 
 
+.timeline-dot{
+
+    position:relative !important;
+
+    left:auto !important;
+
+    top:auto !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    margin:0 auto 22px !important;
+
+    display:block;
+
+}

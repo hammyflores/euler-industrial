@@ -7,33 +7,42 @@
     position:relative;
 
     display:flex;
-    align-items:center;
 
-    min-height:100vh;
+    align-items:center;
 
     overflow:hidden;
 
-    padding-top:clamp(80px,7vw,100px);
+    min-height:clamp(420px,60vw,560px);
+
+    padding-block:clamp(70px,8vw,120px);
 
     background:
+
         linear-gradient(
+
             90deg,
-            rgba(0,0,0,.96) 0%,
-            rgba(0,0,0,.90) 28%,
-            rgba(0,0,0,.68) 48%,
-            rgba(0,0,0,.25) 68%,
+
+            rgba(0,0,0,.92) 0%,
+
+            rgba(0,0,0,.82) 28%,
+
+            rgba(0,0,0,.52) 55%,
+
+            rgba(0,0,0,.15) 78%,
+
             rgba(0,0,0,0) 100%
+
         ),
+
         url("../img/hero.webp");
 
     background-repeat:no-repeat;
 
     background-size:cover;
 
-    background-position:72% center;
+    background-position:center 25%;
 
 }
-
 
 /*==================================================
                 CONTAINER
@@ -41,13 +50,15 @@
 
 .hero-container{
 
-    width:100%;
+    position:relative;
 
-    display:flex;
+    z-index:2;
 
-    align-items:center;
+    width:min(1280px,100%);
 
-    min-height:100vh;
+    margin:auto;
+
+    padding-inline:clamp(18px,3vw,30px);
 
 }
 
@@ -60,7 +71,9 @@
 
     width:min(620px,100%);
 
-    margin-top:clamp(20px,4vw,80px);
+    margin-top:clamp(16px,1.5vw,30px);
+
+    margin-left:clamp(24px,2vw,40px);
 
     position:relative;
 
