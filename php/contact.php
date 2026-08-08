@@ -122,6 +122,9 @@ try {
 
     $mail->isSMTP();
 
+    $mail->SMTPTimeout = 15;
+$mail->Timeout = 15;
+
     $mail->Host = SMTP_HOST;
 
     $mail->SMTPAuth = true;
